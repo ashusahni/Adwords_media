@@ -5,7 +5,7 @@ import { Flex } from '../styles/flex';
 
 export const CaseStudy = () => {
     return (
-        <Box css={{ py: '$20', px: '$6', bg: 'rgba(255,255,255,0.02)' }}>
+        <Box css={{ py: '$20', px: '$6', bg: 'rgba(255,255,255,0.02)' }} id="case-studies">
             <Box css={{ maxWidth: '1200px', margin: '0 auto' }}>
                 <Flex direction={'column'} align={'center'} css={{ mb: '$16' }}>
                     <Text span css={{ color: '$primary', fontWeight: 'bold', letterSpacing: '2px', textTransform: 'uppercase' }}>
@@ -18,20 +18,25 @@ export const CaseStudy = () => {
 
                 <Grid.Container gap={4} alignItems="center">
                     <Grid xs={12} md={6}>
-                         <Box 
+                        <Box
                             css={{
-                                width: '100%', 
-                                height: '500px', 
-                                background: 'linear-gradient(135deg, #111 0%, #222 100%)', 
+                                width: '100%',
+                                height: '500px',
                                 borderRadius: '20px',
-                                border: '1px solid rgba(255,255,255,0.1)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center'
-                            }} 
-                         >
-                             <Text css={{ color: '$accents4' }}>[ Graph / Chart Visualization ]</Text>
-                         </Box>
+                                overflow: 'hidden',
+                                boxShadow: '0 20px 40px -10px rgba(0,0,0,0.5)',
+                            }}
+                        >
+                            <img
+                                src="/growth_chart.png"
+                                alt="Growth Chart Visualization"
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'cover'
+                                }}
+                            />
+                        </Box>
                     </Grid>
                     <Grid xs={12} md={6}>
                         <Flex direction="column" css={{ gap: '$8', px: '$4' }}>
@@ -56,7 +61,14 @@ export const CaseStudy = () => {
                                     Revenue hit $1.1M/mo with a stabilized 3.8x ROAS. CPA dropped by 40%.
                                 </Text>
                             </Box>
-                            <Button auto shadow css={{ bg: '$white', color: 'black', fontWeight: 'bold', mt: '$4' }}>
+                            <Button
+                                auto
+                                shadow
+                                as="a"
+                                href="https://calendly.com"
+                                target="_blank"
+                                css={{ bg: '$white', color: 'black', fontWeight: 'bold', mt: '$4' }}
+                            >
                                 Read Full Case Study
                             </Button>
                         </Flex>

@@ -1,4 +1,4 @@
-import { Grid, Text } from '@nextui-org/react';
+import { Grid, Text, useTheme } from '@nextui-org/react';
 import React from 'react';
 import { Box } from '../styles/box';
 import { Flex } from '../styles/flex';
@@ -13,8 +13,9 @@ const steps = [
 ];
 
 export const HowItWorks = () => {
+    const { isDark } = useTheme();
     return (
-        <Box css={{ py: '$20', px: '$6', maxWidth: '1000px', margin: '0 auto', position: 'relative' }}>
+        <Box css={{ py: '$20', px: '$6', maxWidth: '1000px', margin: '0 auto', position: 'relative' }} id="process">
             <Flex direction={'column'} align={'center'} css={{ mb: '$20' }}>
                 <Text span css={{ color: '$primary', fontWeight: 'bold', letterSpacing: '2px', textTransform: 'uppercase' }}>
                     Our Process
@@ -73,8 +74,8 @@ export const HowItWorks = () => {
                             >
                                 <Box
                                     css={{
-                                        bg: 'rgba(255,255,255,0.03)',
-                                        border: '1px solid rgba(255,255,255,0.1)',
+                                        bg: isDark ? 'rgba(255,255,255,0.03)' : 'rgba(255,255,255,0.8)',
+                                        border: isDark ? '1px solid rgba(255,255,255,0.1)' : '1px solid rgba(0,0,0,0.1)',
                                         backdropFilter: 'blur(10px)',
                                         p: '$8',
                                         borderRadius: '20px',

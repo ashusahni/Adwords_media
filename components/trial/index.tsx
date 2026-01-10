@@ -34,6 +34,9 @@ export const Trial = () => {
 
             <Button
                size="xl"
+               as="a"
+               href="https://calendly.com"
+               target='_blank'
                css={{
                   backgroundColor: '$primary',
                   color: 'white',

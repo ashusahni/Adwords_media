@@ -1,4 +1,4 @@
-import { Card, Grid, Text } from '@nextui-org/react';
+import { Card, Grid, Text, useTheme } from '@nextui-org/react';
 import React from 'react';
 import { Box } from '../styles/box';
 import { Flex } from '../styles/flex';
@@ -19,31 +19,34 @@ interface MetricCardProps {
     }
 }
 
-const MetricCard = ({ metric }: MetricCardProps) => (
-    <Card css={{
-        bg: 'rgba(255, 255, 255, 0.03)',
-        border: '1px solid rgba(255, 255, 255, 0.05)',
-        backdropFilter: 'blur(10px)',
-        p: '$8',
-        borderRadius: '$lg',
-        transition: 'transform 0.3s ease, border 0.3s ease',
-        '&:hover': {
-            transform: 'translateY(-5px)',
-            border: '1px solid $primary',
-            boxShadow: '0 10px 40px -10px rgba(204, 255, 0, 0.1)'
-        }
-    }}>
-        <Card.Body>
-            <Text span css={{ color: '$accents6', fontSize: '$sm', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                {metric.label}
-            </Text>
-            <Flex align={'end'} css={{ gap: '$4', mt: '$2' }}>
-                <Text h2 css={{ m: 0, lineHeight: 1 }}>{metric.value}</Text>
-                <Text span css={{ color: '$primary', fontSize: '$sm', mb: '$1' }}>{metric.change}</Text>
-            </Flex>
-        </Card.Body>
-    </Card>
-);
+const MetricCard = ({ metric }: MetricCardProps) => {
+    const { isDark } = useTheme();
+    return (
+        <Card css={{
+            bg: isDark ? 'rgba(255, 255, 255, 0.03)' : 'rgba(255, 255, 255, 0.8)',
+            border: isDark ? '1px solid rgba(255, 255, 255, 0.05)' : '1px solid rgba(0, 0, 0, 0.05)',
+            backdropFilter: 'blur(10px)',
+            p: '$8',
+            borderRadius: '$lg',
+            transition: 'transform 0.3s ease, border 0.3s ease',
+            '&:hover': {
+                transform: 'translateY(-5px)',
+                border: '1px solid $primary',
+                boxShadow: '0 10px 40px -10px rgba(204, 255, 0, 0.1)'
+            }
+        }}>
+            <Card.Body>
+                <Text span css={{ color: '$accents6', fontSize: '$sm', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                    {metric.label}
+                </Text>
+                <Flex align={'end'} css={{ gap: '$4', mt: '$2' }}>
+                    <Text h2 css={{ m: 0, lineHeight: 1 }}>{metric.value}</Text>
+                    <Text span css={{ color: '$primary', fontSize: '$sm', mb: '$1' }}>{metric.change}</Text>
+                </Flex>
+            </Card.Body>
+        </Card>
+    );
+};
 
 export const Results = () => {
     return (

@@ -83,7 +83,13 @@ export const ReelsShowcase = () => {
             </Grid.Container>
 
             <Flex justify="center" css={{ mt: '$12' }}>
-                <Button auto ghost css={{ color: '$white', borderColor: '$accents6' }}>
+                <Button
+                    auto
+                    ghost
+                    as="a"
+                    href="#case-studies"
+                    css={{ color: '$white', borderColor: '$accents6' }}
+                >
                     View Creative Library
                 </Button>
             </Flex>

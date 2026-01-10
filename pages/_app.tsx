@@ -1,7 +1,27 @@
 import '../styles/globals.css';
-import type {AppProps} from 'next/app';
-import {createTheme, NextUIProvider} from '@nextui-org/react';
-import {ThemeProvider as NextThemesProvider} from 'next-themes';
+import type { AppProps } from 'next/app';
+import { createTheme, NextUIProvider } from '@nextui-org/react';
+import { ThemeProvider as NextThemesProvider } from 'next-themes';
+
+const lightTheme = createTheme({
+   type: 'light',
+   theme: {
+      colors: {
+         background: '#FFFFFF',
+         text: '#111111',
+         primary: '#0072F5',
+         secondary: '#9353D3',
+         accents1: '#f1f1f1',
+         accents2: '#e1e1e1',
+         accents3: '#d1d1d1',
+         accents4: '#cccccc',
+         accents5: '#999999',
+         accents6: '#888888',
+         accents7: '#666666',
+         accents8: '#444444',
+      },
+   },
+});
 
 const darkTheme = createTheme({
    type: 'dark',
@@ -27,12 +47,13 @@ const darkTheme = createTheme({
    },
 });
 
-function MyApp({Component, pageProps}: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
    return (
       <NextThemesProvider
          defaultTheme="dark"
          attribute="class"
          value={{
+            light: lightTheme.className,
             dark: darkTheme.className,
          }}
       >
