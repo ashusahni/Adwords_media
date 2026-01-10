@@ -1,7 +1,7 @@
-import {Button, Text, Container} from '@nextui-org/react';
+import { Button, Text, Container } from '@nextui-org/react';
 import React from 'react';
-import {Box} from '../styles/box';
-import {Flex} from '../styles/flex';
+import { Box } from '../styles/box';
+import { Flex } from '../styles/flex';
 
 export const Hero = () => {
    return (
@@ -46,50 +46,41 @@ export const Hero = () => {
 
          <Container sm css={{ zIndex: 10, textAlign: 'center' }}>
             <Flex direction={'column'} align={'center'} css={{ gap: '$8' }}>
-               <Box css={{ 
-                   bg: 'rgba(255,255,255,0.05)', 
-                   border: '1px solid rgba(255,255,255,0.1)', 
-                   px: '$4', 
-                   py: '$2', 
-                   borderRadius: '50px',
-                   mb: '$4'
-               }}>
-                   <Text span css={{ color: '$primaryLight', fontSize: '$xs', fontWeight: '600', letterSpacing: '1px' }}>
-                       🚀 NEW: AI-POWERED OPTIMIZATION
-                   </Text>
-               </Box>
+
 
                <Text
                   h1
                   css={{
-                     fontSize: '3.5rem',
-                     '@sm': { fontSize: '5rem' },
+                     fontSize: '3rem',
+                     '@sm': { fontSize: '4.5rem' },
                      lineHeight: '1.1',
                      fontWeight: '800',
                      letterSpacing: '-0.03em',
                      mb: 0,
                   }}
                >
-                  Scale Faster With <br />
+                  Social Media Growth Partner <br />
                   <Text
                      span
                      css={{
                         textGradient: '45deg, $primary -20%, $secondary 50%',
                      }}
                   >
-                     Intelligent Ads
+                     for Ambitious Brands
                   </Text>
                </Text>
 
                <Text
                   css={{
                      color: '$accents6',
-                     maxWidth: '600px',
+                     maxWidth: '800px',
                      fontSize: '$lg',
                      lineHeight: '1.6',
                   }}
                >
-                  We combine proprietary AI with world-class creative to scale your ad spend profitably. Stop guessing, start growing.
+                  When growth becomes a priority, social media can no longer be treated as an experiment.
+                  <br /><br />
+                  At AdwordsMedia, we help ambitious brands build strong, scalable social media systems through content, consistency, and clear execution. We don’t chase vanity metrics. We focus on traction that teams can confidently build their brand around.
                </Text>
 
                <Flex css={{ gap: '$6', mt: '$4' }} wrap={'wrap'} justify={'center'}>
@@ -125,8 +116,8 @@ export const Hero = () => {
                         px: '$12',
                         height: '50px',
                         '&:hover': {
-                            bg: 'rgba(255,255,255,0.05)',
-                            borderColor: '$white'
+                           bg: 'rgba(255,255,255,0.05)',
+                           borderColor: '$white'
                         }
                      }}
                   >
@@ -153,15 +144,15 @@ export const Hero = () => {
                   opacity: 0.9,
                }}
             >
-                {/* Mock UI Elements */}
-                <Box css={{ position: 'absolute', top: '20px', left: '20px', right: '20px', height: '40px', bg: 'rgba(255,255,255,0.05)', borderRadius: '10px' }} />
-                <Flex css={{ position: 'absolute', top: '80px', left: '20px', right: '20px', bottom: '20px', gap: '20px' }}>
-                     <Box css={{ flex: 1, bg: 'rgba(255,255,255,0.02)', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.05)' }} />
-                     <Box css={{ flex: 2, bg: 'rgba(255,255,255,0.02)', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.05)' }} />
-                </Flex>
-                
-                {/* Overlay Gradient */}
-                <Box css={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 0%, #000 100%)' }} />
+               {/* Mock UI Elements */}
+               <Box css={{ position: 'absolute', top: '20px', left: '20px', right: '20px', height: '40px', bg: 'rgba(255,255,255,0.05)', borderRadius: '10px' }} />
+               <Flex css={{ position: 'absolute', top: '80px', left: '20px', right: '20px', bottom: '20px', gap: '20px' }}>
+                  <Box css={{ flex: 1, bg: 'rgba(255,255,255,0.02)', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.05)' }} />
+                  <Box css={{ flex: 2, bg: 'rgba(255,255,255,0.02)', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.05)' }} />
+               </Flex>
+
+               {/* Overlay Gradient */}
+               <Box css={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 0%, #000 100%)' }} />
             </Box>
          </Container>
       </Box>

@@ -4,32 +4,37 @@ import { Box } from '../styles/box';
 import { Flex } from '../styles/flex';
 
 const steps = [
-    { num: '01', title: 'Deep Audit', desc: 'We tear down your ad account, creative history, and funnel. We find the "leaky buckets" costing you money.' },
-    { num: '02', title: 'Strategy & Angles', desc: 'We build the roadmap: new creative hooks, audience avatars, and a testing schedule designed for rapid feedback.' },
-    { num: '03', title: 'Creative Sprint', desc: 'Our studio produces 20+ assets in week 1. Native UGC, high-production studio, and static hybrids.' },
-    { num: '04', title: 'Launch & Scale', desc: 'We deploy. We kill losers fast. We scale winners aggressively using our "Horizontal Scale" method.' }
+    { num: '01', title: 'Research & Social Intelligence', desc: 'We study your niche, competitors, audience behavior, and current social presence. This helps us identify content gaps, winning formats, and storytelling angles that actually resonate.' },
+    { num: '02', title: 'Content Strategy & Direction', desc: 'We define your brand voice, messaging pillars, and content roadmap. This ensures consistency across posts, reels, and stories while keeping the brand authentic.' },
+    { num: '03', title: 'Content Production', desc: 'Our team produces scroll-stopping social media content — short-form videos, UGC-style creatives, and platform-native formats designed to feel organic, not forced.' },
+    { num: '04', title: 'Editing & Optimization', desc: 'Each piece of content is edited for clarity, retention, and impact. We refine hooks, pacing, and structure to maximize engagement on social platforms.' },
+    { num: '05', title: 'Publishing & Execution', desc: 'Content is delivered in ready-to-post formats, aligned with platform best practices. Everything is built for consistency, frequency, and brand recall.' },
+    { num: '06', title: 'Insights & Iteration', desc: 'We analyze engagement, reach, and audience response to understand what’s working. These insights guide future content and help scale your social presence sustainably.' }
 ];
 
 export const HowItWorks = () => {
     return (
         <Box css={{ py: '$20', px: '$6', maxWidth: '1000px', margin: '0 auto', position: 'relative' }}>
-             <Flex direction={'column'} align={'center'} css={{ mb: '$20' }}>
+            <Flex direction={'column'} align={'center'} css={{ mb: '$20' }}>
                 <Text span css={{ color: '$primary', fontWeight: 'bold', letterSpacing: '2px', textTransform: 'uppercase' }}>
-                    The Roadmap
+                    Our Process
                 </Text>
                 <Text h2 css={{ fontSize: '3rem', textAlign: 'center', '@sm': { fontSize: '4rem' } }}>
-                    From Audit to Exit
+                    High-Impact Social Media Growth
+                </Text>
+                <Text span css={{ color: '$accents6', fontSize: '$xl', textAlign: 'center', mt: '$4', maxWidth: '800px' }}>
+                    We follow a clear, execution-driven social media process inspired by how modern, high-growth brands build visibility and trust online. Every step is focused purely on social media — no performance marketing, no distractions.
                 </Text>
             </Flex>
 
             {/* Central Glowing Line (Desktop) */}
-            <Box 
-                css={{ 
-                    position: 'absolute', 
-                    left: '20px', 
-                    top: '200px', 
-                    bottom: '100px', 
-                    width: '4px', 
+            <Box
+                css={{
+                    position: 'absolute',
+                    left: '20px',
+                    top: '280px',
+                    bottom: '100px',
+                    width: '4px',
                     background: 'linear-gradient(180deg, $primary 0%, $secondary 100%)',
                     borderRadius: '2px',
                     boxShadow: '0 0 15px rgba(0, 114, 245, 0.5)',
@@ -39,16 +44,16 @@ export const HowItWorks = () => {
                         left: '50%',
                         transform: 'translateX(-50%)'
                     }
-                }} 
+                }}
             />
 
             <Flex direction="column" css={{ gap: '$12', position: 'relative' }}>
                 {steps.map((step, i) => {
                     const isEven = i % 2 === 0;
                     return (
-                        <Flex 
-                            key={i} 
-                            css={{ 
+                        <Flex
+                            key={i}
+                            css={{
                                 flexDirection: 'column',
                                 '@sm': {
                                     flexDirection: isEven ? 'row' : 'row-reverse',
@@ -59,15 +64,15 @@ export const HowItWorks = () => {
                             }}
                         >
                             {/* Content Side */}
-                            <Box 
-                                css={{ 
-                                    flex: 1, 
+                            <Box
+                                css={{
+                                    flex: 1,
                                     position: 'relative',
-                                    '@sm': { textAlign: isEven ? 'right' : 'left' } 
+                                    '@sm': { textAlign: isEven ? 'right' : 'left' }
                                 }}
                             >
-                                <Box 
-                                    css={{ 
+                                <Box
+                                    css={{
                                         bg: 'rgba(255,255,255,0.03)',
                                         border: '1px solid rgba(255,255,255,0.1)',
                                         backdropFilter: 'blur(10px)',
@@ -82,14 +87,14 @@ export const HowItWorks = () => {
                                         }
                                     }}
                                 >
-                                    <Text span css={{ 
-                                        color: 'transparent', 
-                                        WebkitBackgroundClip: 'text', 
+                                    <Text span css={{
+                                        color: 'transparent',
+                                        WebkitBackgroundClip: 'text',
                                         backgroundImage: 'linear-gradient(45deg, $primary, $secondary)',
-                                        fontSize: '$xl', 
-                                        fontWeight: '900', 
-                                        display: 'block', 
-                                        mb: '$2' 
+                                        fontSize: '$xl',
+                                        fontWeight: '900',
+                                        display: 'block',
+                                        mb: '$2'
                                     }}>
                                         STEP {step.num}
                                     </Text>
@@ -99,10 +104,10 @@ export const HowItWorks = () => {
                             </Box>
 
                             {/* Center Node */}
-                            <Box 
-                                css={{ 
-                                    width: '20px', 
-                                    height: '20px', 
+                            <Box
+                                css={{
+                                    width: '20px',
+                                    height: '20px',
                                     bg: '$black',
                                     border: '4px solid $primary',
                                     borderRadius: '50%',
@@ -117,7 +122,7 @@ export const HowItWorks = () => {
                                         height: '24px',
                                         border: '6px solid $primary',
                                     }
-                                }} 
+                                }}
                             />
 
                             {/* Empty Side for Balance */}

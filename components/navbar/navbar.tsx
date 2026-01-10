@@ -26,7 +26,7 @@ export const Nav = () => {
          <Navbar.Brand css={{ cursor: 'pointer' }}>
             <AcmeLogo />
             <Text b color="inherit" hideIn="xs" css={{ml: '$4', fontSize: '$lg', letterSpacing: '0.5px', color: '$white'}}>
-               ACME
+               Adwords  
             </Text>
          </Navbar.Brand>
 

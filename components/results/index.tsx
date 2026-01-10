@@ -5,10 +5,9 @@ import { Flex } from '../styles/flex';
 
 // Mock Data for "Aceternity-like" dashboard Cards
 const metrics = [
-    { label: 'Total Ad Spend Managed', value: '$15M+', change: '+12%', color: '$primary' },
-    { label: 'Average ROAS', value: '4.2x', change: '+25%', color: '$green600' },
-    { label: 'Leads Generated', value: '50k+', change: '+18%', color: '$blue600' },
-    { label: 'Revenue Generated', value: '$63M+', change: '+30%', color: '$yellow600' },
+    { label: 'ORGANIC-FIRST SYSTEMS', value: 'Up to 100K', change: 'in 90 days', color: '$primary' },
+    { label: 'QUALIFIED LEADS', value: '3–5X Growth', change: 'in first quarter', color: '$green600' },
+    { label: 'CONTENT & FUNNELS', value: 'Stronger ROI', change: 'before scaling ads', color: '$blue600' },
 ];
 
 interface MetricCardProps {
@@ -50,11 +49,11 @@ export const Results = () => {
     return (
         <Box css={{ py: '$20', px: '$6', maxWidth: '1200px', margin: '0 auto' }}>
             <Flex direction={'column'} align={'center'} css={{ mb: '$16' }}>
-                <Text span css={{ color: '$primary', fontWeight: 'bold', letterSpacing: '2px', textTransform: 'uppercase' }}>
-                    The Numbers
-                </Text>
                 <Text h2 css={{ fontSize: '3rem', textAlign: 'center', '@sm': { fontSize: '4rem' } }}>
-                    Results That Speak
+                    Growth Outcomes We’re Known For
+                </Text>
+                <Text span css={{ color: '$accents6', fontSize: '$xl', textAlign: 'center', mt: '$4', maxWidth: '800px' }}>
+                    We work with startups that need momentum — fast, measurable, and sustainable.
                 </Text>
             </Flex>
 
@@ -65,6 +64,9 @@ export const Results = () => {
                     </Grid>
                 ))}
             </Grid.Container>
+            <Text css={{ color: '$accents5', fontSize: '$sm', textAlign: 'center', mt: '$10', maxWidth: '800px', mx: 'auto' }}>
+                Results depend on market, product, and execution — our job is to maximize all three.
+            </Text>
         </Box>
     );
 };

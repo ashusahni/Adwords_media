@@ -12,10 +12,10 @@ const PlayIcon = () => (
 );
 
 const reels = [
-    { title: "The '3-Second' Hook", views: '2.4M Views', gradient: 'linear-gradient(180deg, #111 0%, #0072F5 100%)' },
-    { title: "UGC Product Tease", views: '850K Views', gradient: 'linear-gradient(180deg, #111 0%, #9353D3 100%)' },
-    { title: "Viral Trend Jacking", views: '1.2M Views', gradient: 'linear-gradient(180deg, #111 0%, #FF0080 100%)' },
-    { title: "Founder Story", views: '3.1M Views', gradient: 'linear-gradient(180deg, #111 0%, #00C6FF 100%)' }
+    { title: "The '3-Second' Hook", views: '2.4M Views', videoUrl: 'https://drive.google.com/file/d/1bhSyQ7DHEcubCBQjgTzRLwQEp4o8_lIv/preview' },
+    { title: "UGC Product Tease", views: '850K Views', videoUrl: 'https://drive.google.com/file/d/14bDof4QbHI3E9WInWCnZoQNGTSEL7apu/preview' },
+    { title: "Viral Trend Jacking", views: '1.2M Views', videoUrl: 'https://drive.google.com/file/d/1hXyq2mPEM1yHsXiRp_cKMqaEwJhRLr2l/preview' },
+    { title: "Founder Story", views: '3.1M Views', videoUrl: 'https://drive.google.com/file/d/10GIR-36y0NWHGSFA88BPh6T8UptecB9R/preview' }
 ];
 
 export const ReelsShowcase = () => {
@@ -26,10 +26,12 @@ export const ReelsShowcase = () => {
                     Creative Showcase
                 </Text>
                 <Text h2 css={{ fontSize: '3rem', textAlign: 'center', '@sm': { fontSize: '4rem' } }}>
-                    Short-Form That Sells
+                    Content Formats That Drive Real Attention
+
                 </Text>
                 <Text css={{ color: '$accents6', maxWidth: '600px', textAlign: 'center', mt: '$4' }}>
-                    We don't just make "content". We engineer assets designed to exploit algorithm biases and drive cheap traffic.
+                    High-performing video formats designed to build trust, engagement, and brand recall on social media.
+
                 </Text>
             </Flex>
 
@@ -42,12 +44,11 @@ export const ReelsShowcase = () => {
                                 aspectRatio: '9/16',
                                 borderRadius: '24px',
                                 border: '4px solid #222',
-                                background: reel.gradient,
+                                background: '#000',
                                 position: 'relative',
                                 overflow: 'hidden',
                                 boxShadow: '0 20px 40px -10px rgba(0,0,0,0.5)',
                                 transition: 'transform 0.3s ease',
-                                cursor: 'pointer',
                                 '&:hover': {
                                     transform: 'translateY(-10px) scale(1.02)',
                                     boxShadow: '0 30px 60px -15px rgba(0, 114, 245, 0.3)',
@@ -55,33 +56,23 @@ export const ReelsShowcase = () => {
                                 }
                             }}
                         >
+                            <iframe
+                                src={reel.videoUrl}
+                                style={{ width: '100%', height: '100%', border: 'none', position: 'absolute', inset: 0 }}
+                                allow="autoplay"
+                            />
                             {/* Overlay UI */}
-                            <Flex 
-                                direction="column" 
-                                justify="between" 
-                                css={{ height: '100%', p: '$6', bg: 'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%)' }}
+                            <Flex
+                                direction="column"
+                                justify="between"
+                                css={{ height: '100%', p: '$6', bg: 'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%)', pointerEvents: 'none' }}
                             >
                                 <Flex justify="end">
                                     <Box css={{ width: '30px', height: '30px', borderRadius: '50%', bg: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(5px)' }} />
                                 </Flex>
 
                                 <Flex direction="column" align="center" css={{ mb: '$4' }}>
-                                    <Box 
-                                        css={{ 
-                                            width: '60px', 
-                                            height: '60px', 
-                                            borderRadius: '50%', 
-                                            bg: 'rgba(255,255,255,0.2)', 
-                                            backdropFilter: 'blur(10px)', 
-                                            display: 'flex', 
-                                            alignItems: 'center', 
-                                            justifyContent: 'center',
-                                            mb: '$8'
-                                        }}
-                                    >
-                                        <PlayIcon />
-                                    </Box>
-                                    
+
                                     <Text h4 css={{ color: 'white', mb: 0, textAlign: 'center' }}>{reel.title}</Text>
                                     <Text css={{ color: '$primary', fontWeight: 'bold' }}>{reel.views}</Text>
                                 </Flex>
@@ -91,7 +82,7 @@ export const ReelsShowcase = () => {
                 ))}
             </Grid.Container>
 
-             <Flex justify="center" css={{ mt: '$12' }}>
+            <Flex justify="center" css={{ mt: '$12' }}>
                 <Button auto ghost css={{ color: '$white', borderColor: '$accents6' }}>
                     View Creative Library
                 </Button>
